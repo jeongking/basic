@@ -21,7 +21,8 @@ AppAsset::register($this);
     <title><?=Html::encode($this->title)?></title>
     <?php $this->head()?>
 </head>
-<body>
+<?php $backgroundColor = isset($this->params['background-color'])?$this->params['background-color']:'#FFFFFF'; ?>
+<body style="background-color:<?php echo $backgroundColor ?>">
 <?php $this->beginBody()?>
 
 <div class="wrap" >
@@ -60,6 +61,15 @@ NavBar::end();
         <?=Breadcrumbs::widget([
 	'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 ])?>
+    <div class="well">
+    	This is content for blockADV from view
+    	<br>
+    	<?php if(isset($this->blocks['blockADV'])) { ?>
+    		<?php echo $this->blocks['blockADV']; ?>
+    		<?php } else { ?>
+    			<i>No content available</i>
+    		<?php } ?>
+    </div>
         <?=$content?>
     </div>
 </div>

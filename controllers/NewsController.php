@@ -28,4 +28,7 @@ class NewsController extends Controller{
 		}
 		return $this->render('itemsDetail',['item' => $item]);
 	}
+	public function actionAdvTest(){
+		return $this->render('advTest');
+	}
 }
