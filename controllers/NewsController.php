@@ -40,4 +40,7 @@ class NewsController extends Controller{
 		}
 		return $this->render('responsiveContentTest',['responsive' => $responsive]);
 		}
+	public function  actionIndex(){
+		return render('index');
+	}
 	}

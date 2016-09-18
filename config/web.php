@@ -10,13 +10,12 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'enableStrictParsing' => false,
-            'suffix' => '.html',
+            // 'suffix' => '.html',
             'showScriptName' => false,
-            'rules' => array(
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-        ),
+            'rules' => [
+                'new/<year:\d{4}>/item-list' => 'new/item-list',
+                'new/<category:\w+>/item-list' => 'test-rules/item-list',
+        ],
        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
