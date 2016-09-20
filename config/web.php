@@ -6,6 +6,9 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'aliases' => [
+            '@uploadedfilesdir' => '@app/uploadedfiles'
+        ],
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
